@@ -2,7 +2,7 @@ module Octoshark
   module ConnectionHandler
     def establish_connection(*args)
       Octoshark::ConnectionPoolsManager.reset_connection_managers!
-      super(*args)
+      super(args[0], **args[1])
     end
   end
 
